@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'TTChocolates-Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('TTChocolates-Bold'), url("TTChocolates-Bold.woff") format('woff');
+}
+* {
+    box-sizing: border-box;
+    background-color: #C4E0FF;
+}
+form {
+    width: 950px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    margin: 230px auto;
+    justify-content: space-between;
+}
+input/*, button*/ {
+    width: 915px;
+    height: 135px;
+    padding: 10px 40px 10px 40px;
+    font-size: 35px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    margin: 16px 16px;
+}
+input::placeholder {
+    font-family: 'TTChocolates-Bold';
+    float: right;
+    color: #AFC9E6;
+    font-weight: bold;
+}
+/*button {
+    font-family: 'TTChocolates-Bold';
+    color: #000;
+    font-weight: bold;
+}*/
+
+img {
+    position: absolute;
+    right: 385px;
+    top: 845px;
+    width: 90px;
+}
+
+h1 {
+    text-align: center;
+}

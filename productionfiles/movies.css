@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Bernoru Black Ultra Expanded';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bernoru Black Ultra Expanded'), url('bernoru-blackultraexpanded.woff') format('woff');
+}
+@font-face {
+    font-family: 'Coco Gothic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Coco Gothic'), url('CocoGothic-Bold.woff') format('woff');
+}
+* {
+    background-color: #3EA66B;
+    box-sizing: border-box;
+}
+.header {
+    width: 1250px;
+    height: 140px;
+    background-color: #FFD83F;
+    position: absolute;
+    top: 100px;
+    left: 360px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+.genre-header {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #5CD1FF;
+    width: 454px;
+    height: 90px;
+    left: 148px;
+    position: absolute;
+    font-family: 'Coco Gothic';
+}
+.top-300 {
+    top: 300px;
+}
+.top-450 {
+    top: 450px;
+}
+.top-1010 {
+    top: 1010px;
+}
+.top-1160 {
+    top: 1160px;
+}
+.container {
+    position: absolute;
+    left: 148px;
+    height: 500px;
+    width: 1320px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.film {
+    width: 300px;
+}
+#movie {
+    width: 250px;
+}
+.p-header {
+    font-family: 'Bernoru Black Ultra Expanded';
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #FFD83F;
+    text-align: center;
+    font-size: 50px;
+}
+.p-genre-header {
+    background-color: #5CD1FF;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+}
+.profile {
+    font-family: 'Coco Gothic';
+    float: right;
+    font-size: xx-large;
+}
+.title {
+    font-family: 'Coco Gothic';
+}

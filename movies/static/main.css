@@ -1,0 +1,98 @@
+
+*{
+    box-sizing: border-box;
+    background-color: #65A84A;
+}
+
+.log-in, .sign-up {
+    position: absolute;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 490px;
+    height: 112px;
+    top: 856px;
+    padding: 10px;
+}
+
+.yellow {
+    background-color: #FFCF3D;
+}
+
+.blue {
+    background-color: #BBD8EF;
+}
+
+.white {
+    background-color: #ffffff;
+}
+
+.log-in {
+    background-color: #FFCF3D;
+    left: 456px;
+}
+
+.sign-up {
+    background-color: #BBD8EF;
+    left: 977px;
+}
+
+.quote {
+    position: relative;
+    left: 360px;
+    top: 166px;
+    width: 1227px;
+    height: 610px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    padding: 200px 50px 50px 50px;
+}
+
+.orange-decor {
+    background-color: #FF892F;
+    position: absolute;
+    width: 296px;
+    height: 78px;
+    top: 124px;
+    left: 829px;
+    border-radius: 50px;
+    border: 1px solid #000000;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 30px 45px 30px 45px;
+}
+
+.black-dots {
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+    border-radius: 50%;
+}
+
+.pin {
+    position: absolute;
+    width: 166px;
+    height: 169px;
+    top: 108px;
+    left: 1515px;
+    z-index: 1;
+}
+
+.click {
+    position: absolute;
+    top: 883px;
+    left: 1354px;
+    z-index: 1;
+    width: 178px;
+    height: 174px;
+}
+
+p {
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    color: #000000;
+}

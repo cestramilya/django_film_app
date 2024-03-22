@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Django Project</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <div class="orange-decor">
+        <div class="black-dots"></div>
+        <div class="black-dots"></div>
+        <div class="black-dots"></div>
+        <div class="black-dots"></div>
+        <div class="black-dots"></div>
+        <div class="black-dots"></div>
+    </div>
+    <img class="pin" src="{% static '6-removebg-preview.png' %}" alt="pin">
+    <div class="quote"><p class="white" id="random_quote"></p></div>
+    <a href="{% url 'log_in' %}"><div class="log-in">
+        <p class="yellow">Log In</p>
+    </div></a>
+    <img class="click" src="{% static '5-removebg-preview.png' %}" alt="click">
+    <a href="{% url 'sign_up' %}"><div class="sign-up">
+        <p class="blue">Sign Up</p>
+    </div></a>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 6);
+        var quotes = [
+            "Everything I learned I learned from the movies. ― Audrey Hepburn", 
+            "Cinema is a matter of what\'s in the frame and what\'s out ― Martin Scorsese", 
+            "Oh how Shakespeare would have loved cinema! ― Derek Jarman, Dancing Ledge", 
+            "Cinematography is a writing with images in mouvement and with sounds. ― Robert Bresson, Notes on the Cinematographer", 
+            "Sometimes, watching a movie is a bit like being raped. ― Luis Buñuel, My Last Sigh", 
+            "The cinema substitutes for our gaze a world more in harmony with our desires. ― André Bazin"
+        ];
+        window.onload = function() {
+            document.getElementById("random_quote").textContent = quotes[randomNumber];
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+* {
+    background-color: #3EA66B;
+    box-sizing: border-box;
+}
+
+.header {
+    position: relative;
+    background-color: #FFFBE0;
+    border: 2px solid #000000;
+    width: 302px;
+    height: 138px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#list{
+    position: absolute;
+    left: -15%;
+    top: 10%;
+    z-index: 1;
+    width: 97px;
+    height: 106px;
+    border-radius: 4px;
+}

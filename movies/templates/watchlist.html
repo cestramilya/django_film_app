@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchlist</title>
+    <style>
+* {
+    background-color: #3EA66B;
+    box-sizing: border-box;
+}
+
+
+.header {
+    position: relative;
+    background-color: #FFFBE0;
+    border: 2px solid #000000;
+    width: 302px;
+    height: 138px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#list{
+    position: absolute;
+    left: -15%;
+    top: 10%;
+    z-index: 1;
+    width: 97px;
+    height: 106px;
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    width: 80vw;
+    height: 100vh;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 250px;
+    height: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px;
+}
+
+#movie {
+    width: 250px;
+}
+
+#delete {
+    width: 30px;
+    margin-left: 720%;
+}
+    </style>
+</head>
+<body>
+    <div class="header"><img id="list" src="{% static '2.png' %}">Watchlist</div>
+    <div class="container">
+        {% for item in watchlist %}
+            <div class="item">
+                <a href="{% url 'remove_from_watchlist' item.movie.id %}">
+                    <img src="{% static 'close.png' %}" id="delete">
+                </a>
+                <img src="{{ item.movie.src }}" alt="movie" id="movie">
+                <p style="margin: auto;">{{ item.movie.title }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'profile' %}"><img style="height: 110px; position: fixed; left:0; bottom: 0;" src="{% static 'back.png' %}"></a>
+</body>
+</html>

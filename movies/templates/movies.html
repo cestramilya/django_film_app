@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciné Navigate</title>
+    <link rel="stylesheet" href="{% static 'movies.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        html,
+        body {
+          position: relative;
+          height: 100%;
+        }
+    
+        body {
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #000;
+          margin: 0;
+          padding: 0;
+        }
+    
+        .swiper {
+          position: absolute;
+          left: 148px;
+          height: 500px;
+          width: 1320px; 
+        }
+    
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        @media (max-width: 760px) {/*
+          .swiper-button-next {
+            right: 20px;
+            transform: rotate(90deg);
+          }
+    
+          .swiper-button-prev {
+            left: 20px;
+            transform: rotate(90deg);
+          }*/
+        }
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: row;
+          padding: 0 30px 0 30px;
+          align-items: center;     
+        }
+      </style>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <p class="profile"><a href="{% url 'profile' %}">{{request.user}}</a> <a href="{% url 'log_out' %}">logout</a></p>
+    {% else %}
+    <p class="profile">Welcome, new user. Please <a href="{% url 'log_in' %}">log in</a>.</p>
+    {% endif %}
+    <div class="header"><p class="p-header">Ciné Navigate</p></div>
+
+    <div class="genre-header top-300" id="Romance"><p class="p-genre-header">Romance</p></div>
+
+      <!-- Swiper -->
+
+    <div class="swiper top-450">
+      <div class="swiper-wrapper">
+        {% for x in myRomanceMovies %}
+        <div class="swiper-slide">
+          <div>
+          <img src="{{ x.src }}" alt="movie" id="movie">
+          <p>{{ x.title }}</p>
+          <div class="buttons">
+            <a href="{% url 'add_to_watchlist' x.id %}"><img src="{% static 'add-plus-button.png' %}" alt="plus" id="plus" style="width: 30px"></a>
+            <a href="{% url 'add_to_watched' x.id %}"><img src="{% static 'view.png' %}" alt="plus" id="view" style="width: 50px"></a>
+            <a href="{% url 'add_to_likes' x.id %}"><img src="{% static 'heart.png' %}" alt="plus" id="heart" style="width: 40px"></a>
+          </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="genre-header top-1010" id="Horror"><p class="p-genre-header">Horror</p></div>
+
+          <!-- Swiper -->
+
+    <div class="swiper top-1160">
+      <div class="swiper-wrapper">
+        {% for x in myHorrorMovies %}
+        <div class="swiper-slide">
+          <div>
+            <img src="{{ x.src }}" alt="movie" id="movie">
+            <p class="title">{{ x.title }}</p>
+            <div class="buttons">
+              <a href="{% url 'add_to_watchlist' x.id %}"><img src="{% static 'add-plus-button.png' %}" alt="plus" id="plus" style="width: 30px"></a>
+              <a href="{% url 'add_to_watched' x.id %}"><img src="{% static 'view.png' %}" alt="plus" id="view" style="width: 50px"></a>
+              <a href="{% url 'add_to_likes' x.id %}"><img src="{% static 'heart.png' %}" alt="plus" id="heart" style="width: 40px"></a>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+  </div>
+ 
+  <div class="genre-header" id="Comedy" style="top: 1720px"><p class="p-genre-header">Comedy</p></div>
+
+  <!-- Swiper -->
+
+  <div class="swiper" style="top: 1870px">
+    <div class="swiper-wrapper">
+      {% for x in myComedyMovies %}
+      <div class="swiper-slide">
+        <div>
+          <img src="{{ x.src }}" alt="movie" id="movie">
+          <p>{{ x.title }}</p>
+          <div class="buttons">
+            <a href="{% url 'add_to_watchlist' x.id %}"><img src="{% static 'add-plus-button.png' %}" alt="plus" id="plus" style="width: 30px"></a>
+            <a href="{% url 'add_to_watched' x.id %}"><img src="{% static 'view.png' %}" alt="plus" id="view" style="width: 50px"></a>
+            <a href="{% url 'add_to_likes' x.id %}"><img src="{% static 'heart.png' %}" alt="plus" id="heart" style="width: 40px"></a>
+          </div>
+          </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<div class="genre-header" id="Comedy" style="top: 2430px"><p class="p-genre-header">Action</p></div>
+
+<div class="swiper" style="top: 2580px">
+  <div class="swiper-wrapper">
+    {% for x in myActionMovies %}
+    <div class="swiper-slide">
+      <div>
+        <img src="{{ x.src }}" alt="movie" id="movie">
+        <p>{{ x.title }}</p>
+        <div class="buttons">
+          <a href="{% url 'add_to_watchlist' x.id %}"><img src="{% static 'add-plus-button.png' %}" alt="plus" id="plus" style="width: 30px"></a>
+          <a href="{% url 'add_to_watched' x.id %}"><img src="{% static 'view.png' %}" alt="plus" id="view" style="width: 50px"></a>
+          <a href="{% url 'add_to_likes' x.id %}"><img src="{% static 'heart.png' %}" alt="plus" id="heart" style="width: 40px"></a>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+    
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper', {
+      slidesPerView: 4,
+      direction: getDirection(),
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
+        resize: function () {
+          swiper.changeDirection(getDirection());
+        },
+      },
+    });
+
+    function getDirection() {
+      var windowWidth = window.innerWidth;
+      var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+      return direction;
+    }
+  </script>
+
+</body>
+</html>

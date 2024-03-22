@@ -1,0 +1,93 @@
+* {
+    background-color: #3EA66B;
+    box-sizing: border-box;
+}
+.yellow-rectangle {
+    cursor: pointer;
+    background-color: #FFFBE0;
+    border: 2px solid #000000;
+    position: absolute;
+    left: 1332px;
+    width: 302px;
+    height: 138px;
+    border-radius: 5px;
+    text-align: center;
+}
+.watched {
+    cursor: pointer;
+    top: 132px;
+    right: 472px;
+}
+.likes {
+    cursor: pointer;
+    top: 351px;
+    right: 472px;
+}
+.watchlist {
+    cursor: pointer;
+    top: 573px;
+    right: 472px;
+}
+img{
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    width: 97px;
+    height: 106px;
+    border-radius: 4px;
+}
+#list {
+    cursor: pointer;
+    left: 1279px;
+    top: 143px;
+}
+#check-mark {
+    cursor: pointer;
+    left: 1279px;
+    top: 366px;
+}
+#heart {
+    cursor: pointer;
+    left: 1279px;
+    top: 588px;
+}
+.hi-name {
+    background-color: #FFD83F;
+    border: 2px solid #000000;
+    border-radius: 200px;
+    position:absolute;
+    top: 614px;
+    left: 310px;
+    width: 773px;
+    height: 162px;
+    text-align: center;
+}
+.hi-name > p {
+    font-size: large;
+    text-align: center;
+    margin: 40px 60px 40px 60px;
+}
+.photo {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    position: absolute;
+    top: 84px;
+    left: 447px;
+    width:435px;
+    height: 435px;
+    border-radius: 50%;
+}
+input {
+    cursor: pointer;
+    position: absolute;
+    top: 537px;
+    left: 593px;
+}
+.hi-name p {
+    background-color: #FFD83F;
+    font-size: larger;
+}
+.yellow-rectangle p {
+    background-color: #FFFBE0;
+    font-size: larger;
+}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{request.user}}</title>
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+</head>
+<body>
+    <div class="photo"></div>
+    <input type="file">
+    <div class="hi-name">
+        <p>hi, {{request.user}}</p>
+    </div>
+
+    <a href="{% url 'watched' %}"><img id="list" src="{% static '1.png' %}">
+    <div class="yellow-rectangle watched">
+        <p>Watched</p>
+    </div></a>
+
+    <a href="{% url 'likes' %}">
+    <img id="check-mark" src="{% static '3.png' %}">
+    <div class="yellow-rectangle likes">
+        <p>Likes</p>
+    </div></a>
+
+    <a href="{% url 'watchlist' %}">
+    <img id="heart" src="{% static '2.png' %}">
+    <div class="yellow-rectangle watchlist">
+        <p>Watchlist</p>
+    </div></a>
+
+    <a href="{% url 'movies' %}"><img style=" position: fixed; left:0; bottom: 0;" src="{% static 'back.png' %}"></a>
+
+</body>
+</html>
